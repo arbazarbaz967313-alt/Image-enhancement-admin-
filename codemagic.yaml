@@ -4,23 +4,21 @@ workflows:
     max_build_duration: 60
     environment:
       flutter: stable
-      android_signing:
-        - keystore_reference   # Codemagic dashboard me keystore upload karo
     scripts:
-      - name: Get packages
+      - name: Get Flutter packages
         script: |
-          cd admin_panel
+          cd snap_enhance_admin
           flutter pub get
       - name: Build APK
         script: |
-          cd admin_panel
-          flutter build apk --release --target-platform android-arm64
+          cd snap_enhance_admin
+          flutter build apk --debug
     artifacts:
-      - admin_panel/build/outputs/flutter-apk/app-release.apk
+      - snap_enhance_admin/build/outputs/flutter-apk/app-debug.apk
     publishing:
       email:
         recipients:
-          - filmexplainthefact@gmail.com
+          - your@email.com
         notify:
           success: true
           failure: true
