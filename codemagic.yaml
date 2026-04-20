@@ -14,7 +14,8 @@ workflows:
           cd snap_enhance_admin
           flutter build apk --debug
     artifacts:
-      - snap_enhance_admin/build/outputs/flutter-apk/app-debug.apk
+      - snap_enhance_admin/build/app/outputs/flutter-apk/app-debug.apk
+      - snap_enhance_admin/build/app/outputs/apk/debug/app-debug.apk
     publishing:
       email:
         recipients:
